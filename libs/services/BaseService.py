@@ -38,10 +38,7 @@ class BaseService(object):
     if packet.HasPayload():
       request.ParseFromString(Utils.BytesToString(packet.payload))
     self.DebugMessage(request)
-    ret = []
-    ret += [self.PerformCallback(methodId, request, response, packet)]
-    ret += [request]
-    return ret
+    return (self.PerformCallback(methodId, request, response, packet), request)
     
   def GetRpcMethod(self, methodId):
     return self.rpc[methodId]

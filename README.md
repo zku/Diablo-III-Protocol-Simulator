@@ -6,7 +6,7 @@ a diablo III network protocol simulator / replayer
 version
 -------
 
-2.00 17.09.2011
+2.01 18.09.2011
 
 author
 ------
@@ -23,7 +23,7 @@ of bound services / responses etc.
 credits
 -------
 
-shadow^dancer, TOM_RUS, d3.dev, diablo3dev.com
+shadow^dancer, TOM_RUS, d3.dev, diablo3dev.com, raistlinthewiz
 
 legal
 -----
@@ -41,6 +41,11 @@ DATA FILE FORMAT
 5) save client->server bytes to c2s.dat  
 6) save server->client bytes to s2c.dat  
 7) place these 3 files in the ./data folder  
+
+CHANGELOG
+=========
+
+18.09.2011 - added HeroDigest dumps (not in html format yet)
 
 OMG
 ===

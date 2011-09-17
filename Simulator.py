@@ -13,6 +13,8 @@ sys.path.append('./libs/proto/lib/')
 sys.path.append('./libs/proto/service/')
 sys.path.append('./libs/proto/google/')
 
+from D3ProtoImports import *
+
 # rpc services
 from services.AuthenticationClient import AuthenticationClient
 from services.AuthenticationServer import AuthenticationServer
@@ -107,19 +109,15 @@ class Entity:
       hash = self.exports[packet.service]
       service = self.services[hash]
       rpc = service.GetRpcMethod(packet.method)
-      result = rpc(packet)
-      if result:
-        response = result[0]
-        request = result[1]
-        direction = 's2c' if self.role == 'client' else 'c2s'
-        if request:
-          self.sim.LogHtml(request, packet, direction)
-        if response:
-          self.other.responses[packet.request] = (response, packet)
-          if not request:
-            self.sim.LogHtml(response, packet, direction)
+      response, request = rpc(packet)
+      direction = 's2c' if self.role == 'client' else 'c2s'
+      if hash != 0xfffffffe:
+        assert(response and request)
+        self.sim.LogHtml(request, packet, direction)
+        self.other.responses[packet.request] = (response, packet, request)
       else:
-        raise RuntimeError('servie handler malfuctioning..')
+        assert(response and not request)
+        self.sim.LogHtml(response, packet, direction)
     else:
       raise RuntimeError('service binding not properly handled')
       
@@ -137,14 +135,15 @@ class Entity:
     if requestId in self.responses:
       t = self.responses[requestId]
       response = t[0]
+      requestPacket = t[1]
+      request = t[2]
+      assert(requestPacket.request == packet.request)
       if packet.HasPayload():
         response.ParseFromString(packet.PayloadAsString())
       if self.debugging:
         print response.__class__.__name__
         print response
       if response.__class__.__name__ == 'BindResponse':
-        requestPacket = t[1]
-        assert(requestPacket.request == packet.request)
         ids = response.imported_service_id
         hashes = self.other.pending[packet.request]
         assert(len(ids) == len(hashes))
@@ -156,9 +155,21 @@ class Entity:
         self.other.pending[packet.request] = []
         assert(self.imports == self.other.exports)
         assert(self.exports == self.other.imports)
+      elif response.__class__.__name__ == 'ExecuteResponse':
+        self.DumpExecuteResponse(request, response)
       return response
     else:
       raise RuntimeError('no request stored for this response, inconsistent..')
+
+  def DumpExecuteResponse(self, request, response):
+    if request.HasField('query_name') and request.query_name == 'GetHeroDigests':
+      for result in response.results:
+        for cell in result.data:
+          data = cell.data
+          if data and len(data) > 0:
+            digest = Hero.Digest()
+            digest.ParseFromString(data)
+            print digest
     
 class Simulator:
   def __init__(self):
