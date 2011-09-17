@@ -548,7 +548,12 @@ class Entity:
     raise RuntimeError('implement me plz')
     
   def HandleGetBidFeeEstimationRequest(self, packet):
-    raise RuntimeError('implement me plz')
+    print '>>> GetBidFeeEstimationRequest'
+    request = GetBidFeeEstimationRequest()
+    if packet.HasPayload():
+      request.ParseFromString(packet.PayloadAsString())
+    print request
+    self.other.responses[packet.request] = ('NoData', NoData(), packet)
     
   def HandleGetOfferFeeEstimationRequest(self, packet):
     raise RuntimeError('implement me plz')
