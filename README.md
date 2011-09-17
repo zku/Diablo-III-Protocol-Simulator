@@ -6,7 +6,7 @@ a diablo III network protocol simulator / replayer
 version
 -------
 
-1.01 17.09.2011
+2.00 17.09.2011
 
 author
 ------
