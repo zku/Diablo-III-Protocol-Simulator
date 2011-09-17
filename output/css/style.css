@@ -1,0 +1,50 @@
+* {
+margin: 0px;
+padding:0px;
+}
+
+#log {
+  background-color:#000000;
+  padding-top:5px;
+}
+
+.c2s, .s2c {
+  font-size:11px;
+  font-family:Courier New;
+  margin-left:auto;
+  margin-right:auto;
+  width:80%;
+  color:#ffffff;
+  padding:5px;
+  margin-bottom:5px;
+}
+
+.title {
+  font-weight:bold;
+  font-size:12px;
+  
+}
+
+.list li {
+  display:inline;
+  list-style-type:none;
+  padding-right:20px;
+}
+
+.hexdump, .proto {
+  text-align:left;
+  background-color:#343434;
+  padding:3px;
+}
+
+.proto {
+  background-color:#232323;
+}
+
+.c2s {
+  background-color:#444444;
+}
+
+.s2c {
+  background-color:#888888;
+}

@@ -1,0 +1,33 @@
+<html><head><title>Diablo III Protocol Simulator by sku/thesku</title></head><link rel="stylesheet" type="text/css" href="css/style.css" /><body><div id="log">
+<div align="center"><table class="c2s"><tr><td class="title">client -> server :: ConnectRequest :: [service=0x0] [method=0x1] [request=0x0] [unknown=0x0] [size=0x0]</td></tr><tr><td class="hexdump">no payload</td></tr><tr><td class="proto">empty</td></tr></table></div>
+<div align="center"><table class="s2c"><tr><td class="title">server -> client :: ConnectResponse :: Answer [service=0xfe] [method=0x0] [request=0x0] [size=0x1a]</td></tr><tr><td class="hexdump">0a 0c 08 dd e9 8e bb 0e 10 85 a8 c9 f3 04 12 0a 08 c3 f2 02 10 df b5 cf f3 04 </td></tr><tr><td class="proto">server_id {
+  label: 3882071261
+  epoch: 1316115461
+}
+client_id {
+  label: 47427
+  epoch: 1316215519
+}</td></tr></table></div>
+<div align="center"><table class="c2s"><tr><td class="title">client -> server :: BindRequest :: [service=0x0] [method=0x2] [request=0x1] [unknown=0x0] [size=0x13]</td></tr><tr><td class="hexdump">0a 08 32 db 32 b7 ff 96 07 fa 12 07 0d 94 80 8c bf 10 02 </td></tr><tr><td class="proto">imported_service_hash: 3073563442
+imported_service_hash: 4194801407
+exported_service {
+  hash: 3213656212
+  id: 2
+}</td></tr></table></div>
+<div align="center"><table class="s2c"><tr><td class="title">server -> client :: BindResponse :: Answer [service=0xfe] [method=0x0] [request=0x1] [size=0x4]</td></tr><tr><td class="hexdump">0a 02 04 03 </td></tr><tr><td class="proto">imported_service_id: 4
+imported_service_id: 3</td></tr></table></div>
+<div align="center"><table class="c2s"><tr><td class="title">client -> server :: BindRequest :: [service=0x0] [method=0x2] [request=0x2] [unknown=0x0] [size=0xf]</td></tr><tr><td class="hexdump">0a 04 01 fc ec 0d 12 07 0d 35 0e 24 71 10 03 </td></tr><tr><td class="proto">imported_service_hash: 233634817
+exported_service {
+  hash: 1898188341
+  id: 3
+}</td></tr></table></div>
+<div align="center"><table class="s2c"><tr><td class="title">server -> client :: BindResponse :: Answer [service=0xfe] [method=0x0] [request=0x2] [size=0x3]</td></tr><tr><td class="hexdump">0a 01 01 </td></tr><tr><td class="proto">imported_service_id: 1</td></tr></table></div>
+<div align="center"><table class="c2s"><tr><td class="title">client -> server :: LogonRequest :: [service=0x1] [method=0x1] [request=0x3] [unknown=0x0] [size=0x53]</td></tr><tr><td class="hexdump">0a 02 44 33 12 03 57 69 6e 1a 04 65 6e 55 53 22 0b 73 6b 75 40 73 6b 75 2e 73 6b 75 28 02 32 33 41 75 72 6f 72 61 20 33 39 36 62 38 36 33 32 61 37 5f 70 75 62 6c 69 63 2f 31 38 38 20 28 41 75 67 20 33 31 20 32 30 31 31 20 32 30 3a 32 35 3a 30 37 29 </td></tr><tr><td class="proto">program: "D3"
+platform: "Win"
+locale: "enUS"
+email: "sku@sku.sku"
+listener_id: 2
+version: "Aurora 396b8632a7_public/188 (Aug 31 2011 20:25:07)"</td></tr></table></div>
+<div align="center"><table class="s2c"><tr><td class="title">server -> client :: LogonResponse :: Answer [service=0xfe] [method=0x3] [request=0x3] [size=0x0]</td></tr><tr><td class="hexdump">no payload</td></tr><tr><td class="proto">empty</td></tr></table></div>
+<div align="center"><table class="s2c"><tr><td class="title">server -> client :: DisconnectNotification :: [service=0x0] [method=0x4] [request=0x0] [unknown=0x0] [size=0x2]</td></tr><tr><td class="hexdump">08 03 </td></tr><tr><td class="proto">error_code: 3</td></tr></table></div>
+</div></body></html>
