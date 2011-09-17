@@ -45,5 +45,5 @@ DATA FILE FORMAT
 OMG
 ===
 
-yes, this is a poc, it's ugly and has alot of repetitive code  
+yes, this is a poc, it's ugly and has a lot of repetitive code  
 get over it
