@@ -23,7 +23,7 @@ of bound services / responses etc.
 credits
 -------
 
-shadow^dancer, TOM_RUS, #d3.dev, diablo3dev.com
+shadow^dancer, TOM_RUS, d3.dev, diablo3dev.com
 
 legal
 -----
