@@ -4,6 +4,9 @@
 import os, re, sys
 from FolderTraveller import FolderTraveller
 
+# note: output is not 100% complete, a few request/response package paths have to be changed
+# and the ExchangeService indices are off by 1.
+
 
 def BuildServiceClass(service):
   m = re.search('service\\s([a-zA-Z]+)\\s{\\s*', service)
