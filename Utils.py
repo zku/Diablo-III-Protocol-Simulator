@@ -4,6 +4,9 @@
 import sys, os
 from ByteStream import ByteStream
 
+def MessageType(message):
+  return message.DESCRIPTOR.full_name
+
 def BytesToHtml(bytes):
   result = ''
   for byte in bytes:

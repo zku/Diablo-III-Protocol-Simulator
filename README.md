@@ -6,7 +6,7 @@ a diablo III network protocol simulator / replayer
 version
 -------
 
-2.01 18.09.2011
+2.02 18.09.2011
 
 author
 ------
@@ -45,7 +45,9 @@ DATA FILE FORMAT
 CHANGELOG
 =========
 
-18.09.2011 - added HeroDigest dumps (not in html format yet)
+2.01.18.09.2011 - added HeroDigest dumps (not in html format yet)  
+2.02.18.09.2011 - log complete message type + scope to html, not just name  
+                  started work on sandbox
 
 OMG
 ===

@@ -1,4 +1,1 @@
- - implement missing handlers
- - test more wireshark caps
- - output data as formatted html
- - refactor code
+ - output herodigests etc. to html

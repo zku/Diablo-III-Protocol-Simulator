@@ -213,7 +213,7 @@ class Simulator:
       title = 'server -> client'
     else:
       title = 'client -> server'
-    title += ' :: ' + message.__class__.__name__ + ' :: ' + packet.HeaderString()
+    title += ' :: ' + Utils.MessageType(message) + ' :: ' + packet.HeaderString()
     html.write('<tr><td class="title">%s</td></tr>' % title)
     html.write('<tr><td class="hexdump">%s</td></tr>' % (Utils.BytesToHtml(packet.payload) if packet.HasPayload() else 'no payload'))
     proto = ('empty' if len(str(message).strip()) == 0 else str(message))

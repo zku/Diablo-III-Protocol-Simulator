@@ -12,10 +12,12 @@ class BaseService(object):
     self.callbacks = {}
     
   def DebugMessage(self, message):
-    print 'dbg'
     if self.debugging:
-      print message.__class__.__name__
+      print ' ++++++++++ '
+      print 'received message ' + Utils.MessageType(message)
+      print 'message contents:'
       print message
+      print ' ++++++++++ '
       
   def RegisterCallback(self, methodId, callback):
     self.callbacks[methodId] = callback
